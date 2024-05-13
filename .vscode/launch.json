@@ -1,0 +1,38 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "g++ - 生成和调试活动文件",
+            "type": "cppdbg",
+            "request": "launch",
+            "cwd": "${fileDirname}",//cwd是指在哪个路径下执行命令，会和工程中文件使用的相对路径有关。所以当使用F5调试命令时，.h或.cpp文件中使用的相对路径用./就指向工程的根目录
+            "program": "${fileDirname}/build/main", // ${fileDirname}指你在运行程序时随处的某个文件位置，${workspaceFolder}则是工作区的位置，和你正打开着的文件位置无关
+            /*
+            将program后的参数修改为可执行文件所在路径cmake默认在build中生成可执行程序
+            所以可以将参数设置为${workspaceFolder}/build/....，其中workspaceFolder指代.vscode的上级目录
+            */
+            "args": [],
+            "stopAtEntry": false,
+            "environment": [],
+            "externalConsole": false,
+            "miDebuggerArgs": "-q -ex quit; wait() { fg >/dev/null; }; /usr/bin/gdb -q --interpreter=mi",
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb",
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "Build my project",
+            /*
+                将preLaunchTask后的参数修改为"Build my project"
+                即与tasks.json的最后一个lable对应
+            */
+        }
+    ]
+}

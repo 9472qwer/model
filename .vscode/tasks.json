@@ -1,0 +1,55 @@
+{
+    "version": "2.0.0",
+    "options": {
+        "cwd": "${fileDirname}/build" //cwd是指在哪个路径下执行命令，会和工程中文件使用的相对路径有关。因为cmake和make必须在${fileDirname}/build路径下运行，而在${fileDirname}/build使用测试命令就导致，.h或.cpp文件中使用的相对路径必须要用../才指向工程的根目录
+    },
+
+    "tasks": [
+        {
+            "label": "cmake",
+            "type": "shell",
+            "command": "cmake",
+            "args": [
+                ".."
+            ]
+        },
+        {
+            "label": "make",
+            "group":{
+                "kind":"build",
+                "isDefault":true
+            },
+            "command": "make",
+            "args":[
+            ]
+        },
+        {
+            "label":"Build my project",
+            "dependsOn":[
+                "cmake",
+                "make"                
+            ]
+        },
+		{//这个大括号里是‘运行(run)’任务，一些设置与上面的构建任务性质相同
+            "options": {
+            "cwd": "${fileDirname}"//test测试任务更改cwd，以避免.cpp和.h文件根目录不在fileDirname的问题
+            },
+            "label": "run",
+            "type": "shell",
+            "dependsOn": "Build my project", //任务依赖，因为要运行必须先构建，所以执行这个任务前必须先执行build任务，
+            "command": "${fileDirname}/build/main", //执行exe文件，只需要指定这个exe文件在哪里就好
+            //"command": "${workspaceFolder}\\build\\main.exe", //执行exe文件，只需要指定这个exe文件在哪里就好
+            "group": {
+                "kind": "test", //这一组是‘测试’组，将run任务放在test组里方便我们用快捷键执行
+                "isDefault": true
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true, //这个就设置为true了，运行任务后将焦点聚集到终端，方便进行输入
+                "panel": "new"
+            }
+        }
+    ]
+}
+

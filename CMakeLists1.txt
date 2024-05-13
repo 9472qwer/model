@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 2.8)
+project(cpp_python)
+include_directories(
+    /home/book/miniconda3/envs/cpp_python/include/python3.9
+)
+add_executable(main
+    main.cpp)
+target_link_libraries(main
+    /home/book/miniconda3/envs/cpp_python/lib/libpython3.9.so
+)
