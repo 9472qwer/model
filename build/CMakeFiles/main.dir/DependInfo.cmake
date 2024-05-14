@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/book/Myproject/main.cpp" "/home/book/Myproject/build/CMakeFiles/main.dir/main.cpp.o"
-  "/home/book/Myproject/mqtt/mqtt.cpp" "/home/book/Myproject/build/CMakeFiles/main.dir/mqtt/mqtt.cpp.o"
-  "/home/book/Myproject/rob/robot.cpp" "/home/book/Myproject/build/CMakeFiles/main.dir/rob/robot.cpp.o"
+  "/home/aa/cpppro/main.cpp" "/home/aa/cpppro/build/CMakeFiles/main.dir/main.cpp.o"
+  "/home/aa/cpppro/mqtt/mqtt.cpp" "/home/aa/cpppro/build/CMakeFiles/main.dir/mqtt/mqtt.cpp.o"
+  "/home/aa/cpppro/rob/robot.cpp" "/home/aa/cpppro/build/CMakeFiles/main.dir/rob/robot.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -16,7 +16,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../"
   "../mqtt"
   "../rob"
-  "/home/book/miniconda3/envs/cpp_python/include/python3.9"
+  "/home/aa/miniconda3/envs/study/include/python3.8"
   )
 
 # Targets to which this target links.

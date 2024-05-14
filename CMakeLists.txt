@@ -14,7 +14,7 @@ file(GLOB_RECURSE rob_c ${CMAKE_CURRENT_SOURCE_DIR}/rob/*.cpp)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/mqtt)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/rob)
 include_directories(
-    /home/book/miniconda3/envs/cpp_python/include/python3.9
+    /home/aa/miniconda3/envs/study/include/python3.8
 )
 
 set(ALL_COMPILE_SRC
@@ -31,6 +31,6 @@ add_executable (main "main.cpp" ${ALL_COMPILE_SRC})
 # target_link_libraries(mqttsend -lpthread -lpaho-mqtt3a -lpaho-mqtt3as -lpaho-mqtt3c -lpaho-mqtt3cs -lssl -lcrypto)
 # target_link_libraries(mqttrecv -lpthread -lpaho-mqtt3a -lpaho-mqtt3as -lpaho-mqtt3c -lpaho-mqtt3cs -lssl -lcrypto)
 target_link_libraries(main -lpthread -lpaho-mqtt3a -lpaho-mqtt3as -lpaho-mqtt3c -lpaho-mqtt3cs -lssl -lcrypto
-                        /home/book/miniconda3/envs/cpp_python/lib/libpython3.9.so
+            /home/aa/miniconda3/envs/study/lib/libpython3.8.so
 )
 # TODO: 如有需要，请添加测试并安装目标。

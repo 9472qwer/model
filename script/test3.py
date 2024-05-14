@@ -6,3 +6,4 @@ class Person:
 
     def foo(self):
         print(f"my name is {self.name}, my age is {self.age}")
+
